@@ -1,0 +1,23 @@
+#Workflow name
+name: Read Hello.txt Content
+
+# Trigger the workflow on push events to the main branch
+on:
+  push:
+    branches:
+      - main # workflow only runs on pushes to the main branch
+
+# define the jobs that will run in this workflow
+jobs:
+  read_file: # job name
+    runs-on: ubuntu-latest # os to run the job on
+
+    steps:
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4 # action to check out the repository code
+
+    - name: Read and Output hello.txt Content # step for reading the file
+      run: | 
+        echo "Reading content of hello.txt..."
+        cat hello.txt # 'cat' কমান্ড ব্যবহার করে hello.txt ফাইলের বিষয়বস্তু পড়া এবং তা স্ট্যান্ডার্ড আউটপুটে প্রিন্ট করা
+        echo "Finished reading hello.txt."

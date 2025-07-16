@@ -1,1 +1,4 @@
 This is a simple hell file
+
+Hello from GitHub Actions!
+This is a test file.
